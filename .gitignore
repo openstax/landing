@@ -8,3 +8,4 @@
 # Ignore editor temp files
 *~
 
+.s3_sync
