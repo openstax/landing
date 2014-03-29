@@ -1,4 +1,1 @@
-openstax
-========
-
-The OpenStax landing page and common functionality API server
+The OpenStax landing page (openstax.org).

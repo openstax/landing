@@ -1,0 +1,38 @@
+<%= image_tag 'clouds.jpg', id: 'bg' %>
+
+<div id='home-page'>
+  <div class="top">
+    <%= image_tag 'os_logo.png' %>
+
+    <h1>Welcome to OpenStax</h1>
+
+    <p>Putting high-quality, flexible and free educational materials at your fingertips.  Free your mind.</p>
+
+  </div>
+
+  <div class="products">
+    <div class='banner'>
+
+    </div>
+
+    <% products = [
+        [ 'os_college_logo.png', 
+          'http://openstaxcollege.org',
+          'Professional-grade college textbooks, absolutely free.'
+        ],
+        [ 'os_tutor_logo.png', 
+          'http://openstaxtutor.org',
+          'A personalized learning experience from a tutor that adapts to you.'
+        ],
+        [ 'os_cnx_logo.png', 
+          'http://cnx.org',
+          'One of the world’s best libraries of customizable educational materials. Available to anyone, anywhere, anytime &ndash; for free.']
+          # 'A world-class library of customizable educational materials. Available to anyone, anywhere, anytime &ndash; for free.']
+      ] %>
+
+    <% products.each do |product| %>
+      <%= partial 'home/product', locals: {image: product[0], link: product[1], description: product[2]} %>
+    <% end %>
+
+  </div>
+</div>

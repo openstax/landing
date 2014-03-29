@@ -1,0 +1,171 @@
+@charset "utf-8";
+@import "compass/css3/opacity";
+
+$os_green: rgb(118, 177, 67); //#77AF42; //#76b143; 
+$os_orange: #F47641; //#f37643;
+$os_gray: #5F6163; //#5e6062;
+$os_yellow: #F4D019; //#f5d10e;
+$os_blue: #233066; //#00246a;
+$os_dark_orange: darken($os_orange,10%);
+
+$os_dark_gray: darken($os_gray,20%);
+
+$new_black: rgb(36,29,1);
+
+$master_width: 790px;
+
+/* Full width background image, per http://css-tricks.com/perfect-full-page-background-image/ */
+#bg { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: -10000;
+}
+
+.bgwidth { 
+  width: 100%; 
+}
+
+.bgheight { 
+  height: 100%; 
+}
+
+
+
+#content {
+  width: $master_width;
+  margin: 0 auto;
+}
+
+#footer, #footer a {
+  font-family: Arial, serif;
+  font-size: 8pt;
+  margin-top: 27px;
+}
+
+#footer {
+  .logo {
+    margin-top: -12px;
+  }
+}
+
+body { 
+  color: $new_black;
+  margin-top:0px;
+}
+
+body, p, ol, ul, td, a {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+}
+
+img {
+  border: none;
+}
+
+input, textarea {
+  font-size:13px;
+  font-family: verdana,arial,helvetica,sans-serif;
+  background-color: #eeeeee;  
+  border: 1px solid #666666;
+  padding: 6px;
+}
+
+a {
+ text-decoration: none;
+ color: $new_black;
+ &:link {}
+ &:hover { color: $os_orange;}
+ &:visited {}
+ &:active { color: #000;}
+}
+
+#home-page {
+  .top {
+    height: 331px;
+    img {
+      margin-top: 50px;
+    }
+
+    h1 {
+      font-size: 24px;
+      // font-family: 'Lusitana', serif;
+      font-family: 'Playfair Display', serif;
+      margin-top: 42px;
+    }
+
+    p {
+      font-family: Helvetica, sans-serif;
+      font-size: 14px;
+      width: 400px;
+      line-height: 22px;
+    }
+  }
+
+  $product_height: 218px;
+  $product_width: 168px;
+  $extra_product_margin: 30px;
+
+  .products {
+    height: $product_height;
+    margin-left: ($master_width - 3* $product_width - 6*$extra_product_margin)/2;
+
+    .banner {
+      background-color: white;
+      opacity: 0.66;
+      border: #cedfeb solid;
+      border-width: 1px 0px;
+      height: $product_height;
+      width: 100%;      
+      left: 0px;
+      position: absolute; 
+      z-index: -500;       
+    }
+
+    .product {
+      height: $product_height;
+      float: left;
+      width: $product_width;
+      display: inline-block;
+      margin: 0 $extra_product_margin;
+
+      .product-logo {
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+        height: 113px;
+        
+        div {
+          position: relative;
+          height: 113px;
+          margin-left: -7px;  // accounts for the width of the TM sign
+      
+          a { 
+            position: absolute;
+            bottom: 17px;
+            margin: 0 auto;
+            margin-left: -25%;
+          }          
+        }
+
+      }
+
+      .product-separator {
+        width: 28px;
+        margin: 0 auto;
+        margin-bottom: 17px;
+        border-top: 1px solid $os_green;
+      }
+
+      .product-description {
+        font-size: 10pt;
+        width: 185px;
+        text-align: center;
+        font-family: arial, sans-serif;
+        margin: 0 auto;
+        line-height: 16px;
+        // letter-spacing: .6px;
+      }
+    }
+  }
+}
