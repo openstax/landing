@@ -71,7 +71,7 @@ configure :build do
 
   # Enable cache buster
   activate :asset_hash do |f|
-    f.ignore = [/^mediakit/]
+    f.ignore = [/^mediakit|^images\/favicon.ico/]
   end
 
   # Use relative URLs
