@@ -2,15 +2,21 @@
 
   <div class='product-logo'>
     <div>
-    <% link_to link do %>
+      <span>
+    <% if link.nil? %>
       <%= image_tag image %>
+    <% else %>
+      <% link_to link do %>
+        <%= image_tag image %>
+      <% end %>
     <% end %>
+      </span>
     </div>
   </div>
 
-  <div class='product-separator'></div>
+  <div class='product-separator <%= 'coming-soon' if link.nil? %>'></div>
 
-  <div class='product-description'>
+  <div class='product-description <%= 'coming-soon' if link.nil? %>'>
     <%= description %>
   </div>
 

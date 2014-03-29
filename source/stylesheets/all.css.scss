@@ -108,11 +108,11 @@ a {
 
   $product_height: 218px;
   $product_width: 178px;
-  $extra_product_margin: 30px;
+  $extra_product_margin: 0px;
 
   .products {
     height: $product_height;
-    margin-left: ($master_width - 3* $product_width - 6*$extra_product_margin)/2;
+    margin-left: ($master_width - 4* $product_width - 8*$extra_product_margin)/2;
 
     .banner {
       background-color: white;
@@ -142,14 +142,15 @@ a {
         div {
           position: relative;
           height: 113px;
-          margin-left: -7px;  // accounts for the width of the TM sign
+          margin-left: -5px;  // accounts for the width of the TM sign
       
-          a { 
+          span {
             position: absolute;
             bottom: 13px;
             margin: 0 auto;
             margin-left: -25%;
-          }          
+          }
+
         }
 
       }
@@ -159,6 +160,10 @@ a {
         margin: 0 auto;
         margin-bottom: 13px;
         border-top: 1px solid $os_green;
+
+        &.coming-soon {
+          border-color: #afadad;
+        }
       }
 
       .product-description {
@@ -171,6 +176,10 @@ a {
         margin: 0 auto;
         line-height: 9pt;
         letter-spacing: .05em;
+
+        &.coming-soon {
+          color: #afadad;
+        }
       }
     }
   }
