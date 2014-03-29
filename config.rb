@@ -51,6 +51,16 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket =  'openstax.org'
+  s3_sync.region = 'us-east-1' 
+  s3_sync.prefer_gzip                = true
+  s3_sync.path_style                 = true
+  s3_sync.reduced_redundancy_storage = false
+  s3_sync.acl                        = 'public-read'
+  s3_sync.encryption                 = false
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -66,14 +76,6 @@ configure :build do
 
   # Use relative URLs
   activate :relative_assets
-
-  activate :s3_sync do |s3_sync|
-    s3_sync.prefer_gzip                = true
-    s3_sync.path_style                 = true
-    s3_sync.reduced_redundancy_storage = false
-    s3_sync.acl                        = 'public-read'
-    s3_sync.encryption                 = false
-  end
 
   # Or use a different image path
   # set :http_path, "/Content/images/"

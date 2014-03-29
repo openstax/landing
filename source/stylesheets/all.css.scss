@@ -84,26 +84,30 @@ a {
   .top {
     height: 331px;
     img {
-      margin-top: 50px;
+      margin-top: 28px;
     }
 
     h1 {
       font-size: 24px;
       // font-family: 'Lusitana', serif;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Nunito', serif;
       margin-top: 42px;
+      font-weight: 400;
+      color: #414042;
     }
 
     p {
-      font-family: Helvetica, sans-serif;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 300;
       font-size: 14px;
       width: 400px;
       line-height: 22px;
+      color: #414042;
     }
   }
 
   $product_height: 218px;
-  $product_width: 168px;
+  $product_width: 178px;
   $extra_product_margin: 30px;
 
   .products {
@@ -142,7 +146,7 @@ a {
       
           a { 
             position: absolute;
-            bottom: 17px;
+            bottom: 13px;
             margin: 0 auto;
             margin-left: -25%;
           }          
@@ -153,18 +157,20 @@ a {
       .product-separator {
         width: 28px;
         margin: 0 auto;
-        margin-bottom: 17px;
+        margin-bottom: 13px;
         border-top: 1px solid $os_green;
       }
 
       .product-description {
-        font-size: 10pt;
-        width: 185px;
+        font-size: 7.5pt;
+        width: 158px;
         text-align: center;
-        font-family: arial, sans-serif;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 300;
+        color: #414042;
         margin: 0 auto;
-        line-height: 16px;
-        // letter-spacing: .6px;
+        line-height: 9pt;
+        letter-spacing: .05em;
       }
     }
   }
