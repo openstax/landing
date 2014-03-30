@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "compass/css3/opacity";
+@import "rgbapng";
 
 $os_green: rgb(118, 177, 67); //#77AF42; //#76b143; 
 $os_orange: #F47641; //#f37643;
@@ -31,10 +32,10 @@ $master_width: 790px;
 }
 
 
-
-#content {
+@mixin standard-outer-box {
   width: $master_width;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #footer, #footer a {
@@ -44,6 +45,7 @@ $master_width: 790px;
 }
 
 #footer {
+  @include standard-outer-box;
   .logo {
     margin-top: -12px;
   }
@@ -82,6 +84,8 @@ a {
 
 #home-page {
   .top {
+    @include standard-outer-box;
+
     height: 331px;
     img {
       margin-top: 28px;
@@ -89,12 +93,20 @@ a {
 
     h1 {
       font-size: 24px;
-      // font-family: 'Lusitana', serif;
       font-family: 'Nunito', serif;
       margin-top: 42px;
       font-weight: 400;
       color: #414042;
     }
+
+    .tag {
+      font-size: 11.5pt;
+      font-family: 'Nunito', serif;
+      margin-top: 14px;
+      font-weight: 400;
+      color: $os_orange;      
+    }
+
 
     p {
       font-family: 'Nunito', sans-serif;
@@ -110,77 +122,75 @@ a {
   $product_width: 178px;
   $extra_product_margin: 0px;
 
-  .products {
-    height: $product_height;
-    margin-left: ($master_width - 4* $product_width - 8*$extra_product_margin)/2;
-
-    .banner {
-      background-color: white;
-      opacity: 0.66;
-      border: #cedfeb solid;
-      border-width: 1px 0px;
+  .banner {
+    @include rgba-background(rgba(255,255,255,0.66));
+    border: #cedfeb solid;
+    border-width: 1px 0px;
+    width: 100%;   
+    
+    .products {
+      @include standard-outer-box;
       height: $product_height;
-      width: 100%;      
-      left: 0px;
-      position: absolute; 
-      z-index: -500;       
-    }
+      z-index: 100;
 
-    .product {
-      height: $product_height;
-      float: left;
-      width: $product_width;
-      display: inline-block;
-      margin: 0 $extra_product_margin;
+       .product {
+          height: $product_height;
+          float: left;
+          width: $product_width;
+          display: inline-block;
+          margin: 0 $extra_product_margin;
 
-      .product-logo {
-        position: relative;
-        margin: 0 auto;
-        text-align: center;
-        height: 113px;
-        
-        div {
-          position: relative;
-          height: 113px;
-          margin-left: -5px;  // accounts for the width of the TM sign
-      
-          span {
-            position: absolute;
-            bottom: 13px;
-            margin: 0 auto;
-            margin-left: -25%;
+          &.first {
+            margin-left: ($master_width - 4* $product_width - 8*$extra_product_margin)/2;  
           }
 
+          .product-logo {
+            text-align: center;
+            height: 113px;
+            width: $product_width;
+            
+            div {
+              position: relative;
+              height: 113px;
+          
+              span {
+                position: absolute;
+                bottom: 13px;
+                left: 0px;
+                width: $product_width;
+              }
+
+            }
+
+          }
+
+          .product-separator {
+            width: 28px;
+            margin: 0 auto;
+            margin-bottom: 13px;
+            border-top: 1px solid $os_green;
+
+            &.coming-soon {
+              border-color: #afadad;
+            }
+          }
+
+          .product-description {
+            font-size: 7.5pt;
+            width: 158px;
+            text-align: center;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 300;
+            color: #414042;
+            margin: 0 auto;
+            line-height: 9pt;
+            letter-spacing: .05em;
+
+            &.coming-soon {
+              color: #afadad;
+            }
+          }
         }
-
       }
-
-      .product-separator {
-        width: 28px;
-        margin: 0 auto;
-        margin-bottom: 13px;
-        border-top: 1px solid $os_green;
-
-        &.coming-soon {
-          border-color: #afadad;
-        }
-      }
-
-      .product-description {
-        font-size: 7.5pt;
-        width: 158px;
-        text-align: center;
-        font-family: 'Nunito', sans-serif;
-        font-weight: 300;
-        color: #414042;
-        margin: 0 auto;
-        line-height: 9pt;
-        letter-spacing: .05em;
-
-        &.coming-soon {
-          color: #afadad;
-        }
-      }
-    }
+    } 
   }
-}

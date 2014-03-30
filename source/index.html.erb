@@ -2,7 +2,8 @@
 
 <div id='home-page'>
   <div class="top">
-    <%= image_tag 'os_logo_tag.png' %>
+    <%= image_tag 'os_logo.png' %>
+    <div class='tag'>Free your mind.</div>
 
     <h1>Welcome to OpenStax</h1>
 
@@ -10,34 +11,35 @@
 
   </div>
 
-  <div class="products">
-    <div class='banner'>
+  <div class="banner">
+
+    <div class="products">
+
+      <% products = [
+          [ 'os_college_logo.png', 
+            'http://openstaxcollege.org',
+            'Professional-grade<br/>college textbooks,<br/>absolutely free.'
+          ],
+          [ 'os_cnx_logo.png', 
+            'http://openstaxcnx.org',
+            'One of the world’s best<br/>libraries of customizable<br/>educational materials.<br/>Available to anyone,<br/>anywhere, anytime &ndash;<br/>for free.'
+          ],
+          [ 'os_tutor_logo.png', 
+            'http://openstaxtutor.org',
+            'A personalized learning<br/>experience from a tutor<br/>that adapts to you.'
+          ],
+          [ 'os_exercises_logo_dim.png', 
+            nil,
+            'COMING SOON'
+          ]
+
+        ] %>
+
+      <% products.each_with_index do |product, ii| %>
+        <%= partial 'home/product', locals: {image: product[0], link: product[1], description: product[2], extra_class: ii == 0 ? 'first' : ''} %>
+      <% end %>
 
     </div>
-
-    <% products = [
-        [ 'os_college_logo.png', 
-          'http://openstaxcollege.org',
-          'Professional-grade<br/>college textbooks,<br/>absolutely free.'
-        ],
-        [ 'os_cnx_logo.png', 
-          'http://openstaxcnx.org',
-          'One of the world’s best libraries of customizable educational materials.<br/>Available to anyone,<br/>anywhere, anytime &ndash;<br/>for free.'
-        ],
-        [ 'os_tutor_logo.png', 
-          'http://openstaxtutor.org',
-          'A personalized learning experience from a tutor that adapts to you.'
-        ],
-        [ 'os_exercises_logo_dim.png', 
-          nil,
-          'COMING SOON'
-        ]
-
-      ] %>
-
-    <% products.each do |product| %>
-      <%= partial 'home/product', locals: {image: product[0], link: product[1], description: product[2]} %>
-    <% end %>
 
   </div>
 </div>
