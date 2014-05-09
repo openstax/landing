@@ -38,6 +38,14 @@ $master_width: 790px;
   margin-right: auto;
 }
 
+@mixin light-font {
+  font-family:'Avenir LT W01 35 Light', 'serif';
+}
+
+@mixin heavy-font {
+  font-family: 'Avenir LT W01 85 Heavy', 'serif';
+}
+
 #footer, #footer a {
   font-family: Arial, serif;
   font-size: 8pt;
@@ -88,33 +96,39 @@ a {
 
     height: 331px;
     img {
-      margin-top: 28px;
+      margin-top: 61px;
+      margin-left: 5px;
     }
 
     h1 {
       font-size: 24px;
-      font-family: 'Nunito', serif;
-      margin-top: 42px;
-      font-weight: 400;
-      color: #414042;
+      @include heavy-font;
+      margin-top: 53px;
+      // font-weight: 400;
+      color: #363636;
+      margin-bottom: 7px;
+      letter-spacing: -1.15px;
     }
 
     .tag {
-      font-size: 11.5pt;
-      font-family: 'Nunito', serif;
-      margin-top: 14px;
-      font-weight: 400;
-      color: $os_orange;      
+      font-size: 14px;
+      @include heavy-font;
+      margin-left: 92px;
+      margin-top: 4px;
+      // font-weight: 400;
+      color: #5f6062;      
     }
 
 
     p {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 300;
+      @include light-font;      
       font-size: 14px;
       width: 400px;
-      line-height: 22px;
-      color: #414042;
+      line-height: 18px;
+      color: #363636;
+      margin-top: 0px;
+      padding-top: 3px;
+      letter-spacing: -0.1px;
     }
   }
 
@@ -176,12 +190,12 @@ a {
           }
 
           .product-description {
-            font-size: 7.5pt;
+            font-size: 10px;
             width: 158px;
             text-align: center;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 300;
-            color: #414042;
+            @include light-font;
+            
+            color: #363636;
             margin: 0 auto;
             line-height: 9pt;
             letter-spacing: .05em;
