@@ -1,42 +1,67 @@
-<%= image_tag 'clouds.jpg', id: 'bg' %>
+<%= image_tag 'student_js.jpg', id: 'bg' %>
 
 <div id='home-page'>
   <div class="top">
-    <%= image_tag 'os_logo_horizontal.png' %>
-    <div class='tag'>Free your mind.</div>
-
-    <h1>Welcome to OpenStax</h1>
-
-    <p>Putting high-quality, flexible and free educational<br/>materials at your fingertips.</p>
-
+    <%= image_tag 'os_logo_horizontal-2.png' %>
+   
   </div>
 
-  <div class="banner">
+  <div id="top-banner" class="banner">
+    <div class="contents">
+      <div class="video">
+        <iframe width="398" height="224" src="//www.youtube.com/embed/g1NCL47P-Ug" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="pitch">
+        <div class="heading">
+          The next big thing is here.
+        </div>
+
+        <div class="para">
+          <p>After saving college students over $13 million in two years with its openly licensed textbooks, OpenStax is now developing free, digital textbooks designed to deliver personalized lessons to high school students.</p>
+
+          <p>Funded by a grant from the Laura and John Arnold Foundation, the project aims to significantly decrease costs for schools and assist teachers by providing actionable analytics that enable them to optimize their students’ learning.</p>
+
+          <p>Click below for more information and to sign up for the pilot program.</p>
+        </div>
+
+        <div class="button">
+          <a href="http://eepurl.com/0cFxP" class="link-button more-information">more information</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="bottom-banner" class="banner">
 
     <div class="products">
 
       <% products = [
           [ 'os_college_logo.png', 
             'http://openstaxcollege.org',
-            'Professional-grade<br/>college textbooks,<br/>absolutely free.'
+            'Professional-grade college<br/>textbooks, absolutely free.'
           ],
           [ 'os_cnx_logo.png', 
             'http://openstaxcnx.org',
-            'One of the world’s best<br/>libraries of customizable<br/>educational materials.<br/>Available to anyone,<br/>anywhere, anytime &ndash;<br/>for free.'
+            'One of the world’s best libraries of<br/>customizable educational materials.<br/>Available to anyone, anywhere,<br/>anytime &ndash; for free.'
           ],
           [ 'os_tutor_logo.png', 
             'http://openstaxtutor.org',
-            'A personalized learning<br/>experience from a tutor<br/>that adapts to you.'
+            'A personalized learning experience<br/>from a tutor that adapts to you.'
           ],
-          [ 'os_exercises_logo_dim.png', 
-            nil,
-            'COMING SOON'
-          ]
+          # [ 'os_exercises_logo_dim.png', 
+          #   nil,
+          #   'COMING SOON'
+          # ]
 
         ] %>
 
       <% products.each_with_index do |product, ii| %>
-        <%= partial 'home/product', locals: {image: product[0], link: product[1], description: product[2], extra_class: ii == 0 ? 'first' : ''} %>
+        <%= partial 'home/product', locals: { image: product[0], 
+                                              link: product[1], 
+                                              description: product[2], 
+                                              extra_class: "product-#{ii}" } %>
       <% end %>
 
     </div>

@@ -42,14 +42,24 @@ $master_width: 790px;
   font-family:'Avenir LT W01 35 Light', 'serif';
 }
 
+@mixin book-font {
+  font-family:'Avenir LT W01 45 Book', 'serif';
+}
+
+@mixin medium-font {
+  font-family:'Avenir LT W01 65 Medium', 'serif';
+}
+
 @mixin heavy-font {
   font-family: 'Avenir LT W01 85 Heavy', 'serif';
 }
 
 #footer, #footer a {
-  font-family: Arial, serif;
+  @include book-font;
+  // font-family: Arial, serif;
   font-size: 8pt;
-  margin-top: 27px;
+  margin-top: 59px;
+  color: white;
 }
 
 #footer {
@@ -90,50 +100,96 @@ a {
  &:active { color: #000;}
 }
 
+.link-button {
+  background-color: $os_orange;
+  color: white;
+  font-weight: bold;
+  padding: 0 13px 0 14px;
+  font-size: 11px;
+  border: none;
+ 
+  &:hover {
+   background-color: $os_dark_orange;
+   color: white;
+  }
+}
+
 #home-page {
   .top {
     @include standard-outer-box;
 
-    height: 331px;
+    height: 343px;
     img {
-      margin-top: 61px;
-      margin-left: 5px;
-    }
-
-    h1 {
-      font-size: 24px;
-      @include heavy-font;
-      margin-top: 53px;
-      // font-weight: 400;
-      color: #363636;
-      margin-bottom: 7px;
-      letter-spacing: -1.15px;
-    }
-
-    .tag {
-      font-size: 14px;
-      @include heavy-font;
-      margin-left: 92px;
-      margin-top: 4px;
-      // font-weight: 400;
-      color: #5f6062;      
-    }
-
-
-    p {
-      @include light-font;      
-      font-size: 14px;
-      width: 400px;
-      line-height: 18px;
-      color: #363636;
       margin-top: 0px;
-      padding-top: 3px;
-      letter-spacing: -0.1px;
+      margin-left: -85px;
     }
   }
 
-  $product_height: 218px;
-  $product_width: 178px;
+  #top-banner {
+    .contents {
+      @include standard-outer-box;  
+      // height: 240px;
+      overflow:auto;
+
+      .pitch {
+        float: left;
+        width: 363px;
+        padding-top: 14px;
+        padding-bottom: 9px;
+        position: relative;
+        // height: 240px - 14px - 9px;
+
+        .heading {
+          @include medium-font;
+          font-size: 24px;
+        }
+        .para {
+          p {
+            @include book-font;
+            // font-size: 9.3px; 
+            font-size:10.5px;
+            text-align: justify;           
+          }
+
+        } 
+
+        .button {
+          width: 100%;
+          margin-left:74px;
+          // bottom: 18px;
+          // position: absolute;
+
+          .more-information {
+            @include heavy-font;
+            font-size: 12px;
+            padding: 10px 46px;
+            margin: 0 auto;
+            display:inline-block;
+          }          
+        }
+
+
+      }
+
+      .video {
+        float: right;
+        width: 398px;
+        // padding: 8px 0px;
+        padding: 13px 0px;
+        // height: 240px;
+      }
+
+    }
+    
+  }
+
+  #bottom-banner {
+    margin-top: 120px;
+  }
+
+  $product_height: 200px;
+  // $product_width: 178px;
+  $product_width: 235px;
   $extra_product_margin: 0px;
 
   .banner {
@@ -154,14 +210,31 @@ a {
           display: inline-block;
           margin: 0 $extra_product_margin;
 
+          &.product-0 {
+
+          }
+
+          &.product-1 {
+            width: $product_width + 81px;
+          }
+
+          &.product-2 {
+
+          }
+
           &.first {
-            margin-left: ($master_width - 4* $product_width - 8*$extra_product_margin)/2;  
+            // margin-left: ($master_width - 3* $product_width - 8*$extra_product_margin)/2;  
+            // margin-left: -15px;
+          }
+
+          &.last {
+            // margin-right: -15px;
           }
 
           .product-logo {
             text-align: center;
             height: 113px;
-            width: $product_width;
+            width: 100%; //$product_width;
             
             div {
               position: relative;
@@ -171,7 +244,7 @@ a {
                 position: absolute;
                 bottom: 13px;
                 left: 0px;
-                width: $product_width;
+                width: 100%; //$product_width;
               }
 
             }
@@ -191,9 +264,9 @@ a {
 
           .product-description {
             font-size: 10px;
-            width: 158px;
+            width: 200px;
             text-align: center;
-            @include light-font;
+            @include book-font;
             
             color: #363636;
             margin: 0 auto;
