@@ -15,20 +15,11 @@ $new_black: rgb(36,29,1);
 
 $master_width: 790px;
 
-/* Full width background image, per http://css-tricks.com/perfect-full-page-background-image/ */
-#bg { 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  z-index: -10000;
-}
-
-.bgwidth { 
-  width: 100%; 
-}
-
-.bgheight { 
-  height: 100%; 
+// Full width background image, per http://css-tricks.com/perfect-full-page-background-image/
+html {
+  background: url(../images/student_js.jpg) no-repeat center center fixed;
+  background-size: cover;
+  background-position-y: 0;
 }
 
 
