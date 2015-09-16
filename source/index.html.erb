@@ -3,7 +3,7 @@
 <div id='home-page'>
   <div class="top">
     <%= image_tag 'os_logo_horizontal-2.png' %>
-   
+
   </div>
 
   <div id="top-banner" class="banner">
@@ -38,19 +38,19 @@
     <div class="products">
 
       <% products = [
-          [ 'os_college_logo.png', 
+          [ 'os_college_logo.png',
             'http://openstaxcollege.org',
             'Professional-grade college<br/>textbooks, absolutely free.'
           ],
-          [ 'os_cnx_logo.png', 
-            'http://openstaxcnx.org',
+          [ 'os_cnx_logo.png',
+            'http://cnx.org',
             'One of the world’s best libraries of<br/>customizable educational materials.<br/>Available to anyone, anywhere,<br/>anytime &ndash; for free.'
           ],
-          [ 'os_tutor_logo.png', 
-            'http://openstaxtutor.org',
+          [ 'os_tutor_logo.png',
+            'http://tutor.openstax.org',
             'A personalized learning experience<br/>from a tutor that adapts to you.'
           ],
-          # [ 'os_exercises_logo_dim.png', 
+          # [ 'os_exercises_logo_dim.png',
           #   nil,
           #   'COMING SOON'
           # ]
@@ -58,9 +58,9 @@
         ] %>
 
       <% products.each_with_index do |product, ii| %>
-        <%= partial 'home/product', locals: { image: product[0], 
-                                              link: product[1], 
-                                              description: product[2], 
+        <%= partial 'home/product', locals: { image: product[0],
+                                              link: product[1],
+                                              description: product[2],
                                               extra_class: "product-#{ii}" } %>
       <% end %>
 
