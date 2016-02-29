@@ -1,3 +1,5 @@
+# THIS REPO IS OBSOLETE AND HAS BITROTTED
+
 The OpenStax landing page (openstax.org).
 
 * `bundle exec middleman build` to generate the static (compiled) version of the site in the `build` directory
